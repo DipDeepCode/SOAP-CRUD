@@ -6,6 +6,6 @@ import ru.ddc.springws.entity.Article;
 import java.util.List;
 
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-    Article findByArticleId(long articleId);
+
     List<Article> findByTitleAndCategory(String title, String category);
 }

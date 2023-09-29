@@ -1,5 +1,5 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="ddc.ru/article-ws"
-           targetNamespace="ddc.ru/article-ws" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="ddc.ru/spring-ws"
+           targetNamespace="ddc.ru/spring-ws" elementFormDefault="qualified">
 
   <xs:element name="getArticleByIdRequest">
     <xs:complexType>

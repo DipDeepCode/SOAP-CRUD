@@ -30,7 +30,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("ArticlesPort");
         wsdl11Definition.setLocationUri("/soapws");
-        wsdl11Definition.setTargetNamespace("ddc.ru/article-ws");
+        wsdl11Definition.setTargetNamespace("ddc.ru/spring-ws");
         wsdl11Definition.setSchema(articlesSchema);
         return wsdl11Definition;
     }
