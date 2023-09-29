@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import ru.ddc.springws.entity.Article;
 import ru.ddc.springws.repository.ArticleRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,14 +14,16 @@ public class ArticleService implements IArticleService {
 
     @Override
     public Article getArticleById(long articleId) {
-        return articleRepository.findByArticleId(articleId);
+        return articleRepository.findById(articleId).orElse(null);
     }
+
     @Override
-    public List<Article> getAllArticles(){
-        return new ArrayList<>(articleRepository.findAll());
+    public List<Article> getAllArticles() {
+        return articleRepository.findAll();
     }
+
     @Override
-    public synchronized boolean addArticle(Article article){
+    public synchronized boolean addArticle(Article article) {
         List<Article> list = articleRepository.findByTitleAndCategory(article.getTitle(), article.getCategory());
         if (!list.isEmpty()) {
             return false;
@@ -31,10 +32,12 @@ public class ArticleService implements IArticleService {
             return true;
         }
     }
+
     @Override
     public void updateArticle(Article article) {
         articleRepository.save(article);
     }
+
     @Override
     public void deleteArticle(Article article) {
         articleRepository.delete(article);
